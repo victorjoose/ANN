@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+#include "functions.h"
+
 void bisection(double (*f)(double), double a, double b, int n) {
     if (f(a) * f(b) >= 0) {
         printf("Não é possível usar Bolzano para garantir a existencia de uma raiz em [%f, %f]\n", a, b);
@@ -21,29 +23,18 @@ void bisection(double (*f)(double), double a, double b, int n) {
     }
 }
 
-int main() {
 //Example 1: f(xe) = x³ - 2, (0,2)
-double f(double x) {
-    return x * x - 5.0;
-}
-
-double a = -2.80016;
-double b = -1.51458;
-int n = 12;
-
-// Função:
-double P(double x){
-    double e = exp(x);
-    return e - 2 * x * x + x - 1.5;
-}
+    double f(double x) {
+        return x * x - 5.0;
+    }
 
 
-// Valores:
-double a1 = 0.09264; 
-double b1 = 0.75199;
-int n1 = 12;
+int main() {
+    
+    double a = 34.11;
+    double b = 203.98;
+    int n = 12;
 
-
-// bisection(f, a, b, n);
-bisection(P, a1, b1, n1);
+    // bisection(populational_growth, a, b, n);
+    bisection(sky_diver_velocity, a, b, n);
 }

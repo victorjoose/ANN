@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+#include "functions.h"
+
 void newton (double (*f)(double),double (*df)(double),double x0, int n) {
     for (int i = 0; i < n; i++){
         double dfx0 = df(x0);
@@ -15,16 +17,17 @@ void newton (double (*f)(double),double (*df)(double),double x0, int n) {
 }
 
 double f (double x) {
-    return x * x - 4 * x + 2 - log(x);
+    return exp(5*x) - 2;
 }
 
 double df(double x) {
-    return 2 * x - 4 - 1/x;
+    return 5 * exp(5*x);
 }
 
 int main() {
-    double x0 = 1.21452;
+    double x0 = 28.0;
     int n = 5;
 
-    newton(f, df, x0, n);
+    // newton(populational_growth, d_populational_growth, x0, n);
+    newton(sky_diver_velocity, d_sky_diver_velocity, x0, n);
 }

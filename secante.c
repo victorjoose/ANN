@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+#include "functions.h"
+
 void secante(double (*f)(double), double x0, double x1, int n){
     for(int i = 0; i < n; i++){
         double result = f(x1) - f(x0);
@@ -16,13 +18,13 @@ void secante(double (*f)(double), double x0, double x1, int n){
 }
 
 double f(double x){
-    return x - 1 - 3 * sin(x);
+    return x * x - 2;
 }
 
 int main(){
-    double x0 = 1.4874;
-    double x1 = 2.53815;
+    double x0 = 24.19;
+    double x1 = 36.49;
     int n = 5;
 
-    secante(f, x0, x1, n);
+    secante(sky_diver_velocity, x0, x1, n);
 }
