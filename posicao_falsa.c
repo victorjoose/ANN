@@ -37,11 +37,11 @@ double f(double x){
 }
 
 int main(){
-    double a = 31.33;
-    double b = 204.55;
+    double a = 0;
+    double b = 4.54;
     int n = 11;
 
     // fpos(f, a, b, n);
-    fpos(sky_diver_velocity, a, b, n);
+    fpos(box_lid_size, a, b, n);
     return 0;
 }

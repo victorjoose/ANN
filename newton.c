@@ -25,9 +25,9 @@ double df(double x) {
 }
 
 int main() {
-    double x0 = 28.0;
+    double x0 = 3.0;
     int n = 5;
 
     // newton(populational_growth, d_populational_growth, x0, n);
-    newton(sky_diver_velocity, d_sky_diver_velocity, x0, n);
+    newton(box_lid_size, d_box_lid_size, x0, n);
 }
