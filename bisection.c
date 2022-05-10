@@ -32,9 +32,8 @@ void bisection(double (*f)(double), double a, double b, int n) {
 int main() {
     
     double a = 0;
-    double b = 4.54;
+    double b = 2059;
     int n = 12;
 
-    // bisection(populational_growth, a, b, n);
-    bisection(box_lid_size, a, b, n);
+    bisection(infected_population, a, b, n);
 }

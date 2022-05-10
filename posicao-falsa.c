@@ -38,10 +38,10 @@ double f(double x){
 
 int main(){
     double a = 0;
-    double b = 4.54;
+    double b = 2059;
     int n = 11;
 
     // fpos(f, a, b, n);
-    fpos(box_lid_size, a, b, n);
+    fpos(infected_population, a, b, n);
     return 0;
 }

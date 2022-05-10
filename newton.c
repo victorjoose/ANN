@@ -25,7 +25,7 @@ double df(double x) {
 }
 
 int main() {
-    double x0 = 3.0;
+    double x0 = 1.25;
     int n = 5;
 
     // newton(populational_growth, d_populational_growth, x0, n);

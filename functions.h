@@ -106,14 +106,18 @@ double d_particle_position(double w) {
 }
 
 double box_lid_size(double l) {
-
-    return 4 * pow(l,3) - 50.68 * pow(l,2) + 147.569 * l;
+    return 12 * pow(l,2) - 113.56 * l + 177.045;
 }
 
 double d_box_lid_size(double l) {
-    // 4 * pow(l,3) - 55.84*pow(l,2) + 165.505*l;
-    return 147.5689 - 101.36*l + 12*pow(l,2);
+    return 24 * l - 113.56;
 }
 
 
+double infected_population(double t){
+        double l = 1.41 * pow(10,-10);
+        double n = 128667148;
+
+        return (n + 1) / (1 + n*exp(-l*(n+1)*t)) - (n*25)/100;
+}
 

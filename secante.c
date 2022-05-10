@@ -22,8 +22,8 @@ double f(double x){
 }
 
 int main(){
-    double x0 = 1.14;
-    double x1 = 3.95;
+    double x0 = 0.11;
+    double x1 = 4.07;
     int n = 5;
 
     secante(box_lid_size, x0, x1, n);
