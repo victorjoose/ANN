@@ -1,3 +1,4 @@
+import numpy as np
 
 def dif_div(x, y):
     num = len(x)
@@ -31,23 +32,40 @@ def build_func(x, coefs):
 if __name__ == '__main__':
 
     #ex
-    x = [1, 2, 3, 4]
-    y = [0, 1, 5, 1]
+    # x = [-2.778, -1.221, -0.665, 0.792, 2.182, 2.962, 4.285]
+    # y = [1.931, 1.275, 2.726, 2.333, 1.47, 1.984, 1.272]
+
+    # coefs = dif_div(x, y)
+
+    # #polinomio interpolador da lista de pontos
+    # p = build_func(x, coefs)
+
+    # print(coefs)
+
+    # print(p(1), p(3), p(3), p(4))
+    # print(f'{p(0.97244)}')
+
+
+    # Usando Função
+    # x = [0.537, 1.492 , 2.77]
+    x = [-2.249, -1.568, 0.093, 0.774, 1.439, 2.499, 3.627]
+    y = []
+
+    def f(x):
+        # return np.cos(np.sin(np.log(x**2)))
+        return pow(np.cos(x),3)+2*pow(np.cos(x),2)+1 
+
+    for i in x:
+        y.append(f(i))
 
     coefs = dif_div(x, y)
-
-    #polinomio interpolador da lista de pontos
     p = build_func(x, coefs)
-
     print(coefs)
 
-    print(p(1), p(3), p(3), p(4))
-    print(f'{p(0.97244)}')
 
 
     #visu
     import matplotlib.pyplot as plt
-    import numpy as np
 
     t = np.linspace(min(x), max(x), 100)
     pt = [p(ti) for ti in t]

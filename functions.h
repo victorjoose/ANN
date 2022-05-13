@@ -1,6 +1,6 @@
 #include <math.h>
 
-#define PI (3.141592653589793)
+#define PI M_PI
 #define g (9.81)
 
 double generic_function(double x){

@@ -1,44 +1,53 @@
 #include <stdio.h>
+#include <math.h>
+#define ROWS 3
+#define COLS 3
 
-void seidel(double *x0, int rows, double matrix[rows][rows+1], int n){
-    for(int i=0; i<n; i++){
-        for(int r =0; r<rows; r++){
-            double temp = 0;
-            temp += matrix[r][rows];
-            for(int c = 0; c<rows; c++){
-                if(r!=c){
-                    temp -= (matrix[r][c] * x0[c]);
+void seidel(double a[ROWS][COLS], double b[COLS], double chute[COLS], int n){
+    for(int it = 0; it < n; it++){
+        for(int i=0; i<ROWS; i++){
+            double xi = b[i];
+            for(int j = 0; j<COLS; j++){
+                if(i!=j){
+                    xi -= a[i][j] * chute[j];
                 }
             }
-            temp /= matrix[r][r];
-            printf("X_%d,%d = %.16f\n", r + 1, i + 1, temp);
-            x0[r] = temp;
+            xi /= a[i][i];
+            chute[i] = xi;
+        }
+        printf("X^(%d) ->", it +1);
+        for(int k=0;k<COLS; k++){
+            printf("%.8f\t", chute[k]);
         }
         printf("\n");
+
     }
 }
 
-int main(){
-    
-    // int rows = 3;
-    // double matrix[3][4] = {
-    //     {-4.31, -0.72, -2.37, -3.43},
-    //     {3.08, 4.38, 0.08, 3.17},
-    //     {-3.75, 4.37, -9.34, -3.35}
-    // };
-    // double x0[3] = {-3.59, 3.7, -4.52};
+int main() {
+    double g = 9.81, k = 52 * M_PI/180,
+            mi1 = 0.19, mi2 = 0.19, mi3 = 0.5,
+            m1 = 139, m2 = 123, m3 = 23,
+            r1 = (m1 * g * sin(k)) - (mi1 * m1 * g * cos(k)),
+            r2 = (m2 * g * sin(k)) - (mi2 * m2 * g * cos(k)),
+            r3 = (m3 * g * sin(k)) - (mi3 * m3 * g * cos(k));
 
+    printf("%.16f,   %.16f,   %.16f", r1, r2, r3);
 
-    int rows = 4;
-    double matrix[4][5] = {
-        {-7.58, 2.25, 2.18, 1.59, -1.83},
-        {-1.87, -8.48,-0.09, 4.96, -0.93},
-        {-3.13, -0.55, -10.09, -4.86, 3.01},
-        {2.85, 2.01, -0.78, -7.2, 1.75}
+    // Seidel input
+    double a[ROWS][COLS] = {
+        {m1, 1, 0},
+        {m2, -1, 1},
+        {m3, 0, -1}
     };
-    double x0[4] = {-3.12, 1.5, 3.96, -3.03};
 
-    int n = 18;
+    double b[ROWS] = {r1, r2, r3};
 
-    seidel(x0, rows, matrix, n);
+    double chute[COLS] = {5, 148, 127};
+
+    int n = 300;
+
+    seidel(a,b,chute,n);
+
+    return 0;
 }

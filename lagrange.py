@@ -20,7 +20,7 @@ def pl(t, x, coefs):
         prod = 1
         for j in range(num):
             if i != j:
-                prod += (t - x[j])
+                prod *= (t - x[j])
         prod *= coefs[i]
         soma += prod
     return soma
@@ -31,15 +31,19 @@ def poly(x, coefs):
     return f
 
 if __name__ == '__main__':
-    #ex
-    x = [1, 2, 4]
-    y = [0, 3, -1]
+    # ex
+    x = [-1.781, -0.187, 0.9, 1.613, 3.122, 4.015, 5.517, 6.51]  # coordenadas x do ponto
+    y = [0.588, 0.978, 0.914, 0.678, -0.434, -0.948, -0.469, 0.447]  # coordenadas y do ponto
+
+    # x = [-0.836, 0.156, 0.858] 
+    # y = [0.054, 0.622, 0.052]
 
     coefs = lagrange(x, y)
+    print(coefs)
 
     lagr = poly(x, coefs)
-    print(lagr(1), lagr(2), lagr(4))
-    print(lagr(2.5))
+    print(lagr(0), lagr(1), lagr(2))
+    # print(lagr(2.5))
 
 
     #visualização
