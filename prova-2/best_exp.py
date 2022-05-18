@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
     #print(coefs)
 
-    a = np.exp(60)
+    a = np.exp(a0)
     b = a1
 
     p = build_func(a, b)
