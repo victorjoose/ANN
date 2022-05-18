@@ -48,12 +48,12 @@ if __name__ == '__main__':
 
     # Usando Função
     # x = [0.537, 1.492 , 2.77]
-    x = [-2.249, -1.568, 0.093, 0.774, 1.439, 2.499, 3.627]
+    x = [0.988, 1.937, 2.867]
     y = []
 
     def f(x):
-        # return np.cos(np.sin(np.log(x**2)))
-        return pow(np.cos(x),3)+2*pow(np.cos(x),2)+1 
+        return np.cos(np.sin(np.log(x**2)))
+        # return pow(np.cos(x),3)+2*pow(np.cos(x),2)+1 
 
     for i in x:
         y.append(f(i))

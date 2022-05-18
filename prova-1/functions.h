@@ -24,15 +24,15 @@ double d_populational_growth(double l){
 }
 
 double sky_diver_velocity(double m) {
-    double c = 26.61;
-    double v = 30.01;
-    double t = 7.69;
+    double c = 27.98;
+    double v = 32.3;
+    double t = 7.11;
 
     return ((g*m)/c)*(1-exp(-(c/m)*t))-v;
 }
 
 double d_sky_diver_velocity(double m) {
-    return (exp(-204.631/m))*(-(75.4389/m)-0.368658)+0.368658;
+    return (exp(-198.938/m))*(-(69.7491/m)-0.350608)+0.350608;
 }
 
 double water_pipe_exit_velocity(double H) {

@@ -22,9 +22,9 @@ double f(double x){
 }
 
 int main(){
-    double x0 = 0.11;
-    double x1 = 4.07;
+    double x0 = 22.74;
+    double x1 = 34.76;
     int n = 5;
 
-    secante(box_lid_size, x0, x1, n);
+    secante(sky_diver_velocity, x0, x1, n);
 }

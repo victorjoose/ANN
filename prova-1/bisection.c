@@ -31,9 +31,9 @@ void bisection(double (*f)(double), double a, double b, int n) {
 
 int main() {
     
-    double a = 0;
-    double b = 2059;
+    double a = 22.0;
+    double b = 194.91;
     int n = 12;
 
-    bisection(infected_population, a, b, n);
+    bisection(sky_diver_velocity, a, b, n);
 }

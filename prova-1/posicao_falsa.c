@@ -37,11 +37,11 @@ double f(double x){
 }
 
 int main(){
-    double a = 0;
-    double b = 2059;
+    double a = 30.05;
+    double b = 187.44;
     int n = 11;
 
     // fpos(f, a, b, n);
-    fpos(infected_population, a, b, n);
+    fpos(sky_diver_velocity, a, b, n);
     return 0;
 }

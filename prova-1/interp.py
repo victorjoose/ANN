@@ -15,12 +15,18 @@ def func_poly(x, coeffs):
     first = coeffs[0]
     return first + sum([ai * x ** j for j, ai in enumerate(coeffs[1:], 1)])
 
+def f(x):
+    return np.cos(np.exp(-x*x)) + np.sin((x*x)/2)
 
 if __name__ == '__main__':
 
     # Exemplo 1
-    x = [1.938, 2.653, 3.293, 4.018, 4.956]
-    y = [1.481, 4.896, 4.758, 2.08, 2.961]
+    x = [0.733, 1.762, 3.356]
+    y = []
+
+    # Para funções, deixar y vazio e usar:
+    for i in x:
+        y.append(f(i))
 
     coeffs = poly(x, y)
     print(coeffs)
